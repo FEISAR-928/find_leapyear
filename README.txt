@@ -1,1 +1,1 @@
-This progream reads in a Gregorian calendar year containing at least 4 digits (leading zeroes required) and will return a true/false for whether that year is a leap year. Written for the Learning Bash Scripting course. First written 2022-07-XX.
+This progream reads in a Gregorian calendar year containing at least 4 digits (leading zeroes required) and will return a true/false for whether that year is a leap year. Written for the Learning Bash Scripting course. First written 2022-06-XX.
