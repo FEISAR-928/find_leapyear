@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+start() {
+echo "Would you like to enter a year to determine if it is a leap year?"
+select is_user_running in "yes" "no"
+do 
+	case $is_user_running in
+		yes) echo "This program will continue.";break;;
+		no) echo "This program will end.";exit;;
+		*) echo "Invalid input. Please try again.";continue;;
+	esac
+done
+}
+
+start
+echo "You will be prompted to enter a year. If you wish to finish, type \"EXIT\"."
+
+while true 
+do
+	read -p "Please enter a year [yyyy]: " year
+	until [[ $year =~ [0-9]{4} ]]; do
+		if [[ $year = "EXIT" ]]; then
+			echo "This program will end."
+			exit
+		else
+			echo "This is not a valid year."
+			read -p "Please enter a year [yyyy]: " year
+		fi
+	done
+
+	if [[ $(($year % 4)) -eq 0 && $(($year % 100)) -ne 0 ]] || [[ $(($year % 400)) -eq 0 ]]; then
+
+		echo "This is a leap year."
+	else
+		echo "This is not a leap year."
+	fi
+done
